@@ -9,6 +9,9 @@
   gulp.src -- point tofiles for use
   gulp.dest -- points to folder to output
   gulp.watch -- watch files and folders for changes
+  , {
+    since: lastRun(images)
+  }
 */
 /*
 // "browserslist": [
@@ -27,8 +30,10 @@ const { src, dest, watch, series, lastRun, parallel } = require('gulp'),
     cleanFiles = require('del'),
     imagemin = require('gulp-imagemin'),
     minHtml = require('gulp-htmlmin'),
+    terser = require('gulp-terser'),
     browser = require('browser-sync').create(),
     postCss = require('gulp-postcss'),
+
     prefixer = require('autoprefixer');
 
 function hello(cb) {
@@ -87,9 +92,7 @@ exports.minifyHtml = minifyHtml;
 
 function images(cb) {
    pump([
-       src('dev/uploads/*', {
-         since: lastRun(images)
-       }),
+       src('dev/uploads/*'),
       //  imagemin(),
        dest('public/uploads'),
        browser.reload({
@@ -101,6 +104,24 @@ function images(cb) {
 }
 // images
 exports.images = images
+
+// javascript
+function compressJs(cb) {
+   pump([
+       src('dev/*.js'),
+       terser(),
+       rename({
+          extname : ".min.js"
+       }),
+       dest('public/'),
+         browser.reload({
+           stream: true
+       })
+   ],
+   cb
+   )
+}
+exports.compressJs = compressJs;
 
 // this is a private function
 function browserSync(cb) {
@@ -138,13 +159,19 @@ function watchFiles(cb) {
         events: 'all'
       },
       imagemin
+    );
+    watch('dev/*.js', {
+        ignoreInitial: false,
+        events: 'all'
+      },
+      compressJs
     )
     cb
 }
-exports.watchFiles = watchFiles
+exports.watchFiles = watchFiles;
 
 // default
-exports.default = series(clean, series(styles, minifyHtml, images), parallel(browserSync,watchFiles));
+exports.default = series(clean, series(styles, minifyHtml, images, compressJs), parallel(browserSync,watchFiles));
 
 
 
