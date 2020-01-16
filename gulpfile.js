@@ -171,7 +171,7 @@ function watchFiles(cb) {
 exports.watchFiles = watchFiles;
 
 // default
-exports.default = series(clean, series(styles, minifyHtml, images, compressJs), parallel(browserSync,watchFiles));
+exports.default = series(clean, series(images, styles, minifyHtml, compressJs), parallel(browserSync,watchFiles));
 
 
 
