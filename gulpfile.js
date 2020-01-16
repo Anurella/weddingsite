@@ -146,7 +146,7 @@ function watchFiles(cb) {
         ignoreInitial: false,
         events: 'all'
       },
-      styles
+      series(styles,images)
     );
     watch('dev/*.html', {
         ignoreInitial: false,
