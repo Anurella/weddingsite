@@ -67,7 +67,7 @@ function styles(cb) {
          stream: true
        })
     ],
-    cb
+    cb()
   )
 }
 exports.styles = styles;
@@ -85,7 +85,7 @@ function minifyHtml(cb) {
         stream: true
       })
     ],
-    cb
+    cb()
   )
 }
 exports.minifyHtml = minifyHtml;
@@ -99,7 +99,7 @@ function images(cb) {
          stream: true
        })
      ],
-     cb
+     cb()
    )
 }
 // images
@@ -118,7 +118,7 @@ function compressJs(cb) {
            stream: true
        })
    ],
-   cb
+   cb()
    )
 }
 exports.compressJs = compressJs;
@@ -130,13 +130,13 @@ function browserSync(cb) {
           baseDir: "public/"
        }
     }),
-    cb
+    cb()
 }
 exports.browserSync = browserSync
 // clean public folder, when using read false you would not need a dest()
 async function clean(cb) {
      cleanFiles('public');
-     cb
+     cb();
 }
 
 // @ignoreinitial removes the wait for a file to be changed before it is run
@@ -166,12 +166,12 @@ function watchFiles(cb) {
       },
       compressJs
     )
-    cb
+    cb()
 }
 exports.watchFiles = watchFiles;
 
 // default
-exports.default = series(clean, series(images, styles, minifyHtml, compressJs), parallel(browserSync,watchFiles));
+exports.default = series(clean, series(images,styles,minifyHtml,compressJs), parallel(browserSync,watchFiles));
 
 
 
