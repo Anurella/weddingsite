@@ -13,14 +13,21 @@
     since: lastRun(images)
   }
 */
-/*
+
+/* img([
+  img.mozjpeg({ quality: 75, progressive: true }),
+  img.optipng({ optimizationLevel: 5 })
+], */
+/*   {
+    verbose: true
+  }),
+/* */
 // "browserslist": [
 //     "defaults",
 //     "not IE 11",
 //     "not IE_Mob 11",
 //     "maintained node versions"
-],
-*/
+// ],
 
 const { src, dest, watch, series, lastRun, parallel } = require('gulp'),
     sass = require('gulp-sass'),
@@ -28,12 +35,10 @@ const { src, dest, watch, series, lastRun, parallel } = require('gulp'),
     rename = require('gulp-rename'),
     pump = require('pump'),
     cleanFiles = require('del'),
-    imagemin = require('gulp-imagemin'),
     minHtml = require('gulp-htmlmin'),
     terser = require('gulp-terser'),
     browser = require('browser-sync').create(),
     postCss = require('gulp-postcss'),
-
     prefixer = require('autoprefixer');
 
 function hello(cb) {
@@ -92,8 +97,7 @@ exports.minifyHtml = minifyHtml;
 
 function images(cb) {
    pump([
-       src('dev/uploads/*'),
-      //  imagemin(),
+     src('dev/uploads/*'),
        dest('public/uploads'),
        browser.reload({
          stream: true
@@ -104,6 +108,7 @@ function images(cb) {
 }
 // images
 exports.images = images
+
 
 // javascript
 function compressJs(cb) {
@@ -158,7 +163,7 @@ function watchFiles(cb) {
         ignoreInitial: false,
         events: 'all'
       },
-      imagemin
+      images
     );
     watch('dev/*.js', {
         ignoreInitial: false,

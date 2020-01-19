@@ -15,7 +15,5 @@
         "optipng-bin": "^6.0.0",
         "pump": "^3.0.0"
     },
-    "dependencies": {
-        "gulp-imagemin": "^6.2.0"
-    }
+    "dependencies": {}
 }
