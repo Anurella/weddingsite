@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Anuri &amp; Amaka · We're getting married</title>
+    <meta name="description" content="We're getting married! Join us in celebrating from afar.">
+    <meta property="og:title" content="Anuri &amp; Amaka are getting married">
+    <meta property="og:description" content="We're getting married, and we wanted to share the news with you.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --mint: #e6f2ea;
+            --mint-deep: #cfe6d8;
+            --gold: #b8975a;
+            --gold-2: #f3dbb9;
+            --gold-light: #d9c192;
+            --ink: #2e3d35;
+            --ink-soft: #5d6f65;
+        }
+
+        /* 1. border-box for box model */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* 2. remove default margin 
+padding is optional but i do this because of lists*/
+
+        :where(:not(dialog)) {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* 3. great for in-page linking */
+        @media(prefers-reduced-motion:no-preference) {
+            :where(html) {
+                scroll-behavior: smooth;
+            }
+        }
+
+        /* 4. line height and text rendering improvement */
+        :where(html) {
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 5. ensure full viewport height */
+        :where(html, body) {
+            min-block-size: 100%;
+        }
+
+        /* 7. making media elements block-level */
+        :where(img,
+            svg,
+            video,
+            canvas,
+            picture,
+            audio,
+            iframe,
+            embed,
+            object) {
+            display: block
+        }
+
+        body {
+            background: var(--mint);
+            color: var(--ink);
+            font-family: "Jost", sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        main {
+            text-align: center;
+        }
+
+        section {
+            animation: fade 1.2s ease both;
+            padding: 2rem 1rem;
+        }
+
+        section:nth-child(2) {
+            animation-delay: .2s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: .4s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            section {
+                animation: none;
+            }
+        }
+
+        .hero {
+            background: linear-gradient(to bottom, rgba(10, 39, 6, 0.8), rgba(10, 39, 6, 0.8)), url("public/uploads/backdrop_eng.jpg") center/cover no-repeat;
+        }
+
+        .logo {
+
+            display: flex;
+            place-content: center;
+
+            svg {
+                height: auto;
+                width: 100px;
+            }
+        }
+
+        /* padding: 1rem 1.5rem 3rem; */
+
+
+        /* Hero */
+        .portraits {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-block: 2rem 1rem;
+        }
+
+        .portrait {
+            width: max(13vw, 200px);
+            height: max(13vw, 200px);
+            border-radius: 50%;
+            border: 2px solid var(--gold-light);
+            outline: 2px solid var(--gold-light);
+            outline-offset: 1px;
+            background: var(--mint-deep);
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            font-family: "Sacramento", cursive;
+            font-size: 2.5rem;
+            color: var(--gold);
+        }
+
+        .portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .amp {
+            font-family: "Sacramento", cursive;
+            font-style: italic;
+            font-size: 2rem;
+            color: var(--gold-light);
+        }
+
+        h1 {
+            font-family: "Sacramento", cursive;
+            font-weight: 300;
+            font-size: clamp(2.6rem, 11vw, 4rem);
+            line-height: 1.1;
+            letter-spacing: .02em;
+            color: var(--gold-2);
+            text-shadow: 0px 0px 16px var(--gold-light);
+        }
+
+        h1 em {
+            color: var(--gold);
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-family: "Sacramento", cursive;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--ink-soft);
+        }
+
+        .date {
+            margin-top: 1.5rem;
+            font-size: .85rem;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+        }
+
+        .divider {
+            width: 3rem;
+            height: 1px;
+            background: var(--gold);
+            margin: 2rem auto 0;
+            border: 0;
+        }
+
+        p+p {
+            margin-top: 1rem;
+        }
+
+        h2 {
+            font-family: "Sacramento", cursive;
+            font-weight: 400;
+            font-size: 2rem;
+            margin: .5rem 0 1.25rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: .95rem 2.25rem;
+            background: var(--gold);
+            color: #fff;
+            font-weight: 500;
+            font-size: .8rem;
+            letter-spacing: .25em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 999px;
+            transition: background .25s, transform .25s;
+        }
+
+        .btn:hover,
+        .btn:focus-visible {
+            background: #9f8048;
+            transform: translateY(-2px);
+        }
+
+        .btn:focus-visible {
+            outline: 2px solid var(--ink);
+            outline-offset: 3px;
+        }
+
+        .small {
+            font-size: .85rem;
+            color: var(--ink-soft);
+            margin-top: 1.25rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            font-family: "Sacramento", cursive;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: var(--ink-soft);
+        }
+
+        footer span {
+            display: block;
+            color: var(--gold);
+            font-style: normal;
+            margin-top: .25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="hero">
+            <div class="logo">
+                <svg width="350" height="141" viewBox="0 0 350 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M146.551 88.2866C123.666 110.502 94.283 133.309 60.7512 133.309C46.7414 133.309 37.4731 128.789 29.3903 117.386C35.5024 118.567 41.422 119.35 47.7342 119.35C72.9756 119.35 95.0683 109.719 114.99 94.579C131.363 81.9941 148.322 63.7075 148.322 41.6839C148.322 23.5967 130.371 17.6957 115.19 17.6957C99.4098 17.6957 85.9926 22.223 71.9902 29.2984C53.6463 31.0709 37.6732 33.8183 22.4854 44.8301C9.26827 54.4682 0 68.4269 0 85.1403C0 100.473 11.6391 111.484 25.2488 116.403C35.5024 133.708 47.9268 140 67.8488 140C85.6 140 101.581 134.49 117.161 126.034C134.912 116.403 149.115 102.637 162.917 88.2866H183.632C177.32 99.099 166.466 118.368 166.466 130.953C166.466 135.473 169.229 139.801 174.163 139.801C183.432 139.801 172.578 143.112 178.698 136.428C179.876 135.246 216.171 104.409 216.171 104.409L178.698 136.428C177.32 137.218 180.083 133.117 178.698 134.49C174.163 139.018 185.21 134.49 178.698 134.49C176.919 134.49 176.134 132.526 176.134 131.152C176.134 122.696 203.946 80.421 209.073 72.7548C215.385 63.3161 222.09 54.0694 228.795 44.8301C236.493 33.8183 244.183 23.0059 252.466 12.3855C254.044 10.421 257 6.49188 257 3.73708C257 0.590843 254.637 0 252.073 0C241.62 0 221.305 18.8774 214.007 25.3693C198.62 39.1285 183.632 53.486 168.444 67.6366C162.324 73.5377 156.012 79.4387 149.507 85.1403H131.949C130.771 85.1403 129.193 85.3397 129.193 86.9055C129.193 88.0872 131.163 88.2866 131.949 88.2866H146.551ZM165.681 85.1403C178.898 70.7829 191.915 56.2334 205.124 42.0827C212.029 34.4092 218.734 26.743 226.232 19.6677C231.166 14.9483 243.59 3.73708 250.688 3.73708C251.481 3.73708 252.073 3.73707 252.073 4.71935C252.073 5.90103 239.449 18.8774 237.871 20.6499C219.134 41.0931 201.383 62.5258 185.21 85.1403H165.681ZM145.366 42.0827C145.366 47.5849 143.588 53.2866 141.417 58.3973C132.741 78.6485 114.598 93.5967 95.461 103.818C82.2513 110.894 65.0853 116.403 50.0976 116.403C42.4073 116.403 35.1098 115.421 27.6122 113.648C26.2342 109.129 25.4414 105.783 25.4414 100.871C25.4414 72.7548 48.9122 46.0118 71.9902 32.4446C80.2731 32.644 89.5488 33.4269 97.6317 35.9823C99.6024 36.5731 104.144 38.7371 106.115 38.7371C106.707 38.7371 107.1 38.3456 107.1 37.7548C107.1 32.836 83.0366 29.6898 78.6951 29.2984C90.9268 23.7962 102.959 20.2511 116.568 20.2511C130.178 20.2511 145.366 26.3516 145.366 42.0827ZM64.4926 33.2275C43.3927 47.9764 22.678 74.9188 22.678 101.654C22.678 105.391 23.0781 108.929 24.0634 112.666C12.4244 107.555 2.56341 98.7075 2.56341 85.1403C2.56341 70.7829 12.817 55.2511 24.256 47.1935C35.8951 38.9365 50.2976 34.4092 64.4926 33.2275Z"
+                        fill="var(--gold-light)" />
+                    <path
+                        d="M245.585 88.5635C224.091 110.849 203.964 120.117 172.471 120.117L172.471 126.429L190.5 118.919C173.271 120.697 172.471 126.429 172.471 126.429L171.666 140.439C188.338 140.439 203.348 134.912 217.981 126.429C234.654 116.768 247.993 102.959 260.956 88.5635H280.412C274.483 99.4098 264.289 118.739 264.289 131.363C264.289 135.898 266.885 140.239 271.519 140.239C280.224 140.239 298.747 120.71 304.495 114.005C305.601 112.82 310.973 106.515 310.973 104.737C310.973 104.537 310.792 104.144 310.604 104.144C309.31 104.937 302.456 112.627 301.155 114.005C296.896 118.546 281.894 134.912 275.778 134.912C274.108 134.912 273.37 132.942 273.37 131.563C273.37 123.081 299.492 80.6732 304.307 72.983C310.236 63.5147 316.533 54.239 322.83 44.9707C330.06 33.9244 337.283 23.0781 345.062 12.4244C346.544 10.4537 349.321 6.51224 349.321 3.7488C349.321 0.592696 347.101 0 344.694 0C334.875 0 315.795 18.9366 308.941 25.4488C294.489 39.2512 280.412 53.6537 266.147 67.8488C260.4 73.7683 254.471 79.6879 248.362 85.4074H231.87C230.764 85.4074 229.282 85.6074 229.282 87.178C229.282 87.178 231.133 88.5635 231.87 88.5635H245.585ZM263.552 85.4074C275.965 71.0049 288.191 56.4098 300.598 42.2147C307.083 34.5171 313.381 26.8269 320.423 19.7293C325.057 14.9952 336.726 3.7488 343.392 3.7488C344.137 3.7488 344.694 3.7488 344.694 4.73415C344.694 5.91954 332.836 18.9366 331.354 20.7147C313.757 41.2219 297.084 62.722 281.894 85.4074H263.552Z"
+                        fill="var(--gold-light)" />
+                </svg>
+            </div>
+            <div class="portraits">
+                <div class="portrait" aria-label="Bride"><img src="/public/uploads/amaka_bg.jpg" alt="Bride"></div>
+                <!-- <span class="amp">&amp;</span> -->
+                <div class="portrait" aria-label="Groom"><img src="/public/uploads/anuri.jpg" alt="Groom"></div>
+            </div>
+
+            <h1>Amaka <em>&amp;</em> Anuri</h1>
+            <p class="tagline">are getting married</p>
+            <p class="date">January 30 · 2027</p>
+        </section>
+
+        <hr class="divider">
+
+        <section>
+            <h2> The Event </h2>
+            <p>With full hearts, we wanted to share our news with you.</p>
+            <p>Our celebration will be small and intimate, and we're so sorry we can't have everyone there. You've all
+                been part of our story, and we'll be thinking of you on the day.</p>
+        </section>
+
+        <hr class="divider">
+
+        <section>
+            <h2>Our Registery</h2>
+            <p> Home Fund </p>
+            <p>Dear family and friends,
+                <br />
+                We love all of you deeply and are so blessed that you would want to honor us with gifts to start our new
+                life together. We ask that this gift be monetary as we are moving into our own space and would like to
+                use the funds to furnish it and make it a place of love and comfort. Thank you for your
+                support and for being part of our journey.
+            </p>
+            <a class="btn" href="https://monzo.me/anurinjoku" target="_blank" rel="noopener">Gift Us</a>
+            <p class="small">Your love and good wishes mean just as much.</p>
+        </section>
+
+        <footer>
+            With love and gratitude,
+            <span>A &amp; A</span>
+        </footer>
+    </main>
+</body>
+
+</html>
