@@ -10,7 +10,8 @@
     <meta property="og:title" content="Anuri &amp; Amaka are getting married">
     <meta property="og:description" content="We're getting married, and we wanted to share the news with you.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="public/images/us.webp">
+    <meta property="og:image" content="https://anuriamaka.com/public/images/us.webp">
+    <link rel="icon" type="image/svg+xml" href="public/images/favicon.svg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,6 +89,22 @@ padding is optional but i do this because of lists*/
 
         main {
             text-align: center;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--mint);
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            z-index: 10;
+
+            a {
+                color: var(--ink);
+                font-weight: 700;
+            }
         }
 
         section {
@@ -170,10 +187,14 @@ padding is optional but i do this because of lists*/
             object-fit: cover;
         }
 
-
+        h1,
+        h2,
+        h3 {
+            font-family: "Sacramento", cursive;
+        }
 
         h1 {
-            font-family: "Sacramento", cursive;
+
             font-weight: 300;
             font-size: clamp(2.6rem, 11vw, 4rem);
             line-height: 1.1;
@@ -218,10 +239,16 @@ padding is optional but i do this because of lists*/
         }
 
         h2 {
-            font-family: "Sacramento", cursive;
             font-weight: 400;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin: .5rem 0 1.25rem;
+        }
+
+        h3 {
+            font-weight: 400;
+            font-size: 1.5rem;
+            line-height: 1;
+            margin-block: 0.5rem;
         }
 
         .title_icon {
@@ -232,6 +259,15 @@ padding is optional but i do this because of lists*/
                 height: auto;
                 width: 100px;
             }
+        }
+
+        .round {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto;
+            object-fit: cover;
+            aspect-ratio: 1;
         }
 
         .btn {
@@ -260,6 +296,30 @@ padding is optional but i do this because of lists*/
             outline-offset: 3px;
         }
 
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem 1rem;
+            margin-top: 1rem;
+        }
+
+        .actions .btn {
+            margin-top: 0;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--ink);
+            box-shadow: inset 0 0 0 2px var(--gold);
+        }
+
+        .btn-outline:hover,
+        .btn-outline:focus-visible {
+            background: var(--gold);
+            color: var(--ink);
+        }
+
         .small {
             font-size: 0.9rem;
             color: var(--ink-soft);
@@ -277,6 +337,8 @@ padding is optional but i do this because of lists*/
             justify-content: space-between;
             align-items: center;
         }
+
+        @media screen and (min-width: 768px) {}
     </style>
 </head>
 
@@ -294,20 +356,24 @@ padding is optional but i do this because of lists*/
                 </svg>
             </div>
             <div class="portraits">
-                <div class="portrait" aria-label="Bride"><img src="public/images/amaka_bg.webp" alt="Amaka"></div>
+                <div class="portrait" aria-label="Bride"><img src="public/images/amaka_wd.webp" alt="Amaka"></div>
                 <!-- <span class="amp">&amp;</span> -->
                 <div class="portrait" aria-label="Groom"><img src="public/images/anuri.webp" alt="Anuri"></div>
             </div>
 
             <h1>Amaka <em>&amp;</em> Anuri</h1>
             <p class="tagline">are getting married</p>
-            <p class="hashtag">#Anurimaka</p>
+            <p class="hashtag">#Anuriamaka</p>
             <p class="date">January 30 · 2027</p>
         </section>
 
+        <header>
+            <a href="#ourStory"> Our Story </a>
+            <a href="#registry"> Registry </a>
+            <a href="#moments"> Our Moment</a>
+        </header>
 
-
-        <section>
+        <section id="ourNote">
             <div class="title_icon">
                 <svg width="186" height="170" viewBox="0 0 186 170" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -478,7 +544,30 @@ padding is optional but i do this because of lists*/
 
         <hr class="divider">
 
-        <section>
+        <section id="ourStory">
+            <h2> Our Story</h2>
+            <img src="public/images/uss.webp" alt="Amaka leaning on Anuri" width="100%" height="auto" class="round">
+            <div>
+                <h3>His</h3>
+                <p> I saw </p>
+            </div>
+
+            <div>
+                <h3>Hers</h3>
+                <p> Chinatu'm as I call him is a gentleman and dare I say a lady's man. He is intentional and
+                    thoughtful and generous with no hesitation to share even the little he might have. </p>
+                <p> As days progressed into months, I knew that HE was a keeper and when HE asked to be kept, welp I
+                    said YES and here we are looking forward to keeping him forever</p>
+            </div>
+        </section>
+
+
+
+
+
+        <hr class="divider">
+
+        <section id="registry">
             <div class="title_icon">
                 <svg width="239" height="199" viewBox="0 0 239 199" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M67 115.038L126.547 62.1516L186.095 115.038" stroke="#2E3D35" stroke-width="6"
@@ -536,14 +625,20 @@ padding is optional but i do this because of lists*/
             <p>Dear family and friends,
                 <br />
                 Your love is the greatest gift we could ask for. If you'd like to give something, we're moving into our
-                own space and would be so grateful for contributions toward furnishing it, so we can make it a home full
-                of love and comfort.
+                own space and would be so grateful for your help making it a home full of love and comfort, either with
+                a contribution to our home fund or a gift from our registry.
             </p>
-            <a class="btn" href="https://monzo.me/anurinjoku" target="_blank" rel="noopener">Give to our home fund</a>
+            <div class="actions">
+                <a class="btn" href="https://monzo.me/anurinjoku" target="_blank" rel="noopener">Give to our home
+                    fund</a>
+                <a class="btn btn-outline" href="https://www.amazon.co.uk/wedding/share/amakaanuri" target="_blank"
+                    rel="noopener">View our Amazon registry</a>
+            </div>
             <p class="small">Thank you for being part of our journey.</p>
         </section>
         <hr class="divider">
-        <section>
+
+        <section id="moments">
             <div class="title_icon">
                 <img src="public/images/gift.png" alt="" width="200">
             </div>
