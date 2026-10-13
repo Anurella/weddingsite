@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Our Home Fund · Anuri &amp; Amaka</title>
+    <meta name="description" content="Ways to contribute to our home fund.">
+    <meta property="og:title" content="Our Home Fund · Anuri &amp; Amaka">
+    <meta property="og:description" content="Ways to contribute to our home fund.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://anuriamaka.com/public/images/us.webp">
+    <link rel="icon" type="image/svg+xml" href="public/images/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Sacramento&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="public/site.css">
+    <style>
+        /* Page-specific styles (shared styles live in public/site.css) */
+        main {
+            max-width: 40rem;
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
+        }
+
+        .back {
+            display: block;
+            padding: 1rem 0;
+            text-align: left;
+            color: var(--ink);
+            font-weight: 700;
+            font-size: .9rem;
+            text-decoration: none;
+        }
+
+        .back:hover,
+        .back:focus-visible {
+            text-decoration: underline;
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.1;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 12vw, 4rem);
+            margin: 1rem 0;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .eyebrow {
+            font-size: .75rem;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--ink-soft);
+        }
+
+        .divider {
+            margin-block: 2.5rem;
+        }
+
+        /* Option cards */
+        .options {
+            display: grid;
+            gap: 1.25rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .card {
+            background: #f4faf6;
+            border: 1px solid var(--gold-light);
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+
+        .card h2 {
+            font-size: 2rem;
+            margin-bottom: .25rem;
+            text-align: center;
+        }
+
+        .card .note {
+            text-align: center;
+            font-size: .9rem;
+            color: var(--ink-soft);
+            margin-bottom: 1.25rem;
+        }
+
+        .card .btn {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .details {
+            display: grid;
+            gap: .75rem;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding-bottom: .75rem;
+            border-bottom: 1px dashed var(--gold-light);
+
+            span {
+                display: block;
+            }
+
+            span:first-child {
+                font-size: .75rem;
+                letter-spacing: .15em;
+                text-transform: uppercase;
+                color: var(--ink-soft);
+            }
+
+            span:last-child {
+                font-weight: 700;
+                font-size: 1.05rem;
+                overflow-wrap: anywhere;
+            }
+        }
+
+        .row:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+
+
+        .copy {
+            flex-shrink: 0;
+            font: inherit;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--ink);
+            background: transparent;
+            border: 0;
+            box-shadow: inset 0 0 0 1.5px var(--gold);
+            border-radius: 999px;
+            padding: .35rem .85rem;
+            cursor: pointer;
+            transition: background .2s;
+        }
+
+        .copy:hover,
+        .copy:focus-visible {
+            background: var(--gold);
+        }
+
+        .copy:focus-visible {
+            outline: 2px solid var(--ink);
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .copy {
+                transition: none;
+            }
+        }
+
+        /* Thank you */
+        .thanks h2 {
+            font-size: 2.75rem;
+        }
+
+        .thanks .small {
+            margin-top: 1rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <a class="back" href="index.html#registry">&larr; Back to our page</a>
+
+        <section>
+            <p class="eyebrow">Our home fund</p>
+            <h1>Ways to give</h1>
+            <p>
+                However you choose to give, it will go toward making our home a place of love and comfort.
+                Pick whichever is easiest for you.
+            </p>
+        </section>
+
+        <section class="options" aria-label="Ways to give">
+            <!-- Monzo -->
+            <article class="card">
+                <h2>Pay by card or bank</h2>
+                <p class="note">Quick and secure, from anywhere, through Monzo.</p>
+                <a class="btn" href="https://monzo.me/anurinjoku" target="_blank" rel="noopener">Give via Monzo</a>
+            </article>
+
+            <!-- UK bank -->
+            <article class="card">
+                <h2>UK bank transfer (GBP)</h2>
+                <p class="note">For friends and family paying from a UK account.</p>
+                <div class="details">
+                    <div class="row">
+                        <div>
+                            <span>Account name</span>
+                            <span>Amaka MaryJoe Ndukwu</span>
+                        </div>
+                        <button class="copy" type="button" data-copy="Amaka MaryJoe Ndukwu">Copy</button>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <span>Account number</span>
+                            <span>99479268</span>
+                        </div>
+                        <button class="copy" type="button" data-copy="99479268">Copy</button>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <span>Sort code</span>
+                            <span>60-84-64</span>
+                        </div>
+                        <button class="copy" type="button" data-copy="60-84-64">Copy</button>
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <span>Reference</span>
+                            <span>Home fund</span>
+                        </div>
+                        <button class="copy" type="button" data-copy="Home fund">Copy</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Naira bank -->
+            <article class="card">
+                <h2>Nigerian bank transfer (NGN)</h2>
+                <p class="note">For friends and family paying from a Nigerian account.</p>
+                <div class="details">
+                    <div class="row">
+                        <div>
+                            <span>Bank</span>
+                            <span>Access Bank</span>
+                        </div>
+                        <button class="copy" type="button" data-copy="Access Bank">Copy</button>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <span>Account name</span>
+                            <span>Anuri Njoku</span>
+                        </div>
+                        <button class="copy" type="button" data-copy="Anuri Njoku">Copy</button>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <span>Account number</span>
+                            <span>0724254411</span>
+                        </div>
+                        <button class="copy" type="button" data-copy="0724254411">Copy</button>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <span>Narration</span>
+                            <span>Home fund</span>
+                        </div>
+                        <button class="copy" type="button" data-copy="Home fund">Copy</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <hr class="divider">
+
+        <section class="thanks">
+            <h2>Thank you</h2>
+            <p>
+                From the bottom of our hearts, thank you. Your love, your prayers and your generosity mean more than
+                we can say, and we will think of you every time we walk through our own front door.
+            </p>
+            <p class="small">If you have any trouble, just send us a message and we'll help.</p>
+        </section>
+
+        <footer>
+
+            <span>
+                <img src="public/images/footer.svg" alt="">
+            </span>
+
+            <p>With love and gratitude, <br /> A &amp; A</p>
+            <span>
+                <img src="public/images/footer.svg" alt="">
+            </span>
+
+        </footer>
+    </main>
+
+    <script>
+        document.querySelectorAll('.copy').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var text = btn.dataset.copy;
+                var done = function () {
+                    var original = btn.textContent;
+                    btn.textContent = 'Copied';
+                    setTimeout(function () { btn.textContent = original; }, 1500);
+                };
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(done, function () { });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

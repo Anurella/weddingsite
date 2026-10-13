@@ -19,78 +19,9 @@
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Sacramento&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="public/site.css">
     <style>
-        :root {
-            --mint: #e6f2ea;
-            --mint-deep: #cfe6d8;
-            --gold: #b8975a;
-            --gold-2: #f3dbb9;
-            --gold-light: #d9c192;
-            --ink: #0a2706;
-            --ink-soft: #5d6f65;
-        }
-
-        /* 1. border-box for box model */
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            position: relative;
-        }
-
-        /* 2. remove default margin 
-padding is optional but i do this because of lists*/
-
-        :where(:not(dialog)) {
-            margin: 0;
-            padding: 0;
-        }
-
-
-        /* 3. great for in-page linking */
-        @media(prefers-reduced-motion:no-preference) {
-            :where(html) {
-                scroll-behavior: smooth;
-            }
-        }
-
-        /* 4. line height and text rendering improvement */
-        :where(html) {
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* 5. ensure full viewport height */
-        :where(html, body) {
-            min-block-size: 100%;
-        }
-
-        /* 7. making media elements block-level */
-        :where(img,
-            svg,
-            video,
-            canvas,
-            picture,
-            audio,
-            iframe,
-            embed,
-            object) {
-            display: block
-        }
-
-        body {
-            background: var(--mint);
-            color: var(--ink);
-            font-family: "Lora", serif;
-            font-weight: 300;
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        main {
-            text-align: center;
-        }
-
+        /* Page-specific styles (shared styles live in public/site.css) */
         header {
             position: sticky;
             top: 0;
@@ -143,7 +74,6 @@ padding is optional but i do this because of lists*/
         }
 
         .logo {
-
             display: flex;
             place-content: center;
 
@@ -153,10 +83,6 @@ padding is optional but i do this because of lists*/
             }
         }
 
-        /* padding: 1rem 1.5rem 3rem; */
-
-
-        /* Hero */
         .portraits {
             display: flex;
             align-items: center;
@@ -187,14 +113,7 @@ padding is optional but i do this because of lists*/
             object-fit: cover;
         }
 
-        h1,
-        h2,
-        h3 {
-            font-family: "Sacramento", cursive;
-        }
-
         h1 {
-
             font-weight: 300;
             font-size: clamp(2.6rem, 11vw, 4rem);
             line-height: 1.1;
@@ -226,26 +145,12 @@ padding is optional but i do this because of lists*/
             color: var(--gold-light);
         }
 
-        .divider {
-            width: 3rem;
-            height: 1px;
-            background: var(--gold);
-            margin: 0.5rem auto;
-            border: 0;
-        }
-
-        p+p {
-            margin-top: 1rem;
-        }
-
         h2 {
-            font-weight: 400;
             font-size: 2.5rem;
             margin: .5rem 0 1.25rem;
         }
 
         h3 {
-            font-weight: 400;
             font-size: 1.5rem;
             line-height: 1;
             margin-block: 0.5rem;
@@ -270,32 +175,6 @@ padding is optional but i do this because of lists*/
             aspect-ratio: 1;
         }
 
-        .btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: .95rem 2.25rem;
-            background: var(--gold);
-            color: var(--ink);
-            font-weight: 700;
-            font-size: .8rem;
-            letter-spacing: .25em;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-radius: 999px;
-            transition: background .25s, transform .25s;
-        }
-
-        .btn:hover,
-        .btn:focus-visible {
-            background: #9f8048;
-            transform: translateY(-2px);
-        }
-
-        .btn:focus-visible {
-            outline: 2px solid var(--ink);
-            outline-offset: 3px;
-        }
-
         .actions {
             display: flex;
             flex-wrap: wrap;
@@ -307,38 +186,6 @@ padding is optional but i do this because of lists*/
         .actions .btn {
             margin-top: 0;
         }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--ink);
-            box-shadow: inset 0 0 0 2px var(--gold);
-        }
-
-        .btn-outline:hover,
-        .btn-outline:focus-visible {
-            background: var(--gold);
-            color: var(--ink);
-        }
-
-        .small {
-            font-size: 0.9rem;
-            color: var(--ink-soft);
-            margin-top: 1.25rem;
-        }
-
-        footer {
-            margin-top: 2rem;
-            font-family: "Sacramento", cursive;
-            font-style: italic;
-            font-size: 1.25rem;
-            color: var(--ink-soft);
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        @media screen and (min-width: 768px) {}
     </style>
 </head>
 
@@ -554,10 +401,17 @@ padding is optional but i do this because of lists*/
 
             <div>
                 <h3>Hers</h3>
-                <p> Chinatu'm as I call him is a gentleman and dare I say a lady's man. He is intentional and
-                    thoughtful and generous with no hesitation to share even the little he might have. </p>
-                <p> As days progressed into months, I knew that HE was a keeper and when HE asked to be kept, welp I
-                    said YES and here we are looking forward to keeping him forever</p>
+                <p>
+                    Chinatu'm, as I call him, is a gentleman in every sense of the word. He is intentional and
+                    thoughtful, and so generous
+                    that he'll share even the little he has without a second thought.
+                </p>
+                <p>
+                    As the days turned into months, I knew he was a keeper. So when he asked to be kept, I said yes, and
+                    I'm looking forward
+                    to keeping him forever.
+                </p>
+
             </div>
         </section>
 
@@ -629,8 +483,7 @@ padding is optional but i do this because of lists*/
                 a contribution to our home fund or a gift from our registry.
             </p>
             <div class="actions">
-                <a class="btn" href="https://monzo.me/anurinjoku" target="_blank" rel="noopener">Give to our home
-                    fund</a>
+                <a class="btn" href="gift.html">Give to our home fund</a>
                 <a class="btn btn-outline" href="https://www.amazon.co.uk/wedding/share/amakaanuri" target="_blank"
                     rel="noopener">View our Amazon registry</a>
             </div>
