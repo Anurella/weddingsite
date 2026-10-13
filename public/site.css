@@ -121,7 +121,6 @@ p+p {
 
  footer 
  {
-    margin-top: 2rem;
     font-family: "Sacramento", cursive;
     font-style: italic;
     font-size: 1.5rem;
@@ -131,6 +130,32 @@ p+p {
     justify-content: space-between;
     align-items: center;
 }
+
+ .memories {
+     display: grid;
+     grid-template-columns:repeat(auto-fill, minmax(calc(100%/4),1fr));
+     gap:10px;
+ } 
+
+ @media screen and (min-width: 45rem) {
+    .memories {
+        grid-template-columns:repeat(auto-fill, minmax(calc(100%/6),1fr));
+    }
+ }
+
+ p {
+    max-width: 70ch;
+    margin: 10px auto;
+ }
+
+ .memories > * {
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    height: 100%;
+    object-fit: cover;
+ }
+
+  
 
 @media (prefers-reduced-motion: reduce) {
     .btn {
